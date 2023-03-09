@@ -3,7 +3,7 @@ import openai
 
 
 # API-key
-openai.api_key = " "
+openai.api_key = ""
 
 
 # Flask application settings

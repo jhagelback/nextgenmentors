@@ -10,17 +10,15 @@
     <body onload="init()">
 
         <div id="chat" class="chat">
-            <img src="../static/logo.png" height=60>
-            <div id="history" class="reply">
-
+            <div class="chat-header">
+              <img src="static/logo.png"  width="100" height="100" alt="Chatbot-ikonen">
+              <h3></h3><b></b>
             </div>
-            <table><tr>
-            <td><textarea id="q" rows=2 name="q"></textarea>&nbsp;&nbsp;</td>
-            <td>
-                <button class='icon' onclick="javascript:make_post_request('ask', ask, 'q');"><i class="fas fa-paper-plane"></i></button>
-                <button class='icon' onclick="javascript:init();"><i class="fas fa-trash"></i></button>
-            </td>
-            </tr></table>
-        </div>
+            <div id="history" class="chat-history"></div>
+            <div class="chat-input">
+              <input type="text" id="q" placeholder="Skriv din fråga här" onkeyup="javascript:if(event.keyCode == 13) make_post_request('ask', ask, 'q');" />
+              <button onclick="javascript:make_post_request('ask', ask, 'q');">Skicka</button>
+            </div>
+          </div>
     </body>
 </html>

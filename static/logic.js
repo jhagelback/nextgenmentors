@@ -33,6 +33,12 @@ function make_post_request(url, func, id) {
   fetch(url, {method:'POST',body:q}).then(result=>result.json()).then(result=>func(result));
 }
 
+
+function scrollToBottom() {
+	var chatHistory = document.getElementById("history");
+	chatHistory.scrollTop = chatHistory.scrollHeight;
+	}
+
 // Shows result from a get recommendations request
 function ask(result) {
 	loading = false;
@@ -40,6 +46,7 @@ function ask(result) {
 
 	s = "<span class='reply'><b>" + name + ":</b> " + result["reply"].replace(/\r?\n|\r/g, '<br>') + "</span><br><br>";
 	document.getElementById("history").innerHTML += s;
+	scrollToBottom();
 }
 
 function change_bg(id) {
