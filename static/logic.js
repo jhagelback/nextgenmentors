@@ -38,7 +38,7 @@ function ask(result) {
 	loading = false;
 	document.body.style.cursor = "default";
 
-	s = "<span class='reply'><b>" + name + ":</b> " + result["reply"].replace(/\r?\n|\r/g, '<br>') + "</span><br>";
+	s = "<span class='reply'><b>" + name + ":</b> " + result["reply"].replace(/\r?\n|\r/g, '<br>') + "</span><br><br>";
 	document.getElementById("history").innerHTML += s;
 }
 
