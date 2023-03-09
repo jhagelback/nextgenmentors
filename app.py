@@ -3,7 +3,7 @@ import openai
 
 
 # API-key
-openai.api_key = "..."
+openai.api_key = ""
 
 
 # Flask application settings
@@ -26,7 +26,7 @@ def index():
 def clear():
     global messages
     messages = [
-        {"role": "system", "content": "Du är en hjälpsam assistent."},
+        {"role": "system", "content": "Du är en hjälpsam assistent för personer som ska starta egna företag."},
     ]
     return jsonify({"status": "ok"})
 
