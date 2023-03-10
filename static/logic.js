@@ -12,7 +12,7 @@ function init() {
 // Makes a POST request to the service
 function make_post_request(url, func, id) {
 	let q = document.getElementById(id).value.trim();
-	console.log("'" + q + "'");
+	//console.log("'" + q + "'");
 	if (q == "") {
 		return;
 	}
@@ -55,14 +55,23 @@ function change_bg(id) {
 
 document.onkeyup = function(e) {
 	if (e.ctrlKey) {
-		change_bg(e.key);
+		//change_bg(e.key);
+		if (e.key == "1") document.getElementById("q").value = "Hej, Jag heter Agda. Kan du hjälpa mig med att starta ett företag?";
+		if (e.key == "2") document.getElementById("q").value = "Jag ska starta ett företag inom knyppling och behöver hjälp med förslag på företagsnamn.";
+		if (e.key == "3") document.getElementById("q").value = "Jag ska ange något som heter SNI-kod. Vad ska jag ha till mitt företag?";
+		if (e.key == "4") document.getElementById("q").value = "Vad innebär det här med bifirma?";
+		if (e.key == "5") document.getElementById("q").value = "Kan du ge tips på en bra slogan jag kan använda för mitt företag?";
+		//if (e.key == "6") document.getElementById("q").value = "Har du förslag på hur jag kan sökoptimera min hemsida om knyppling?";
+		//if (e.key == "7") document.getElementById("q").value = "Kan du hjälpa mig med att optimera min metadata?";
+		if (e.key == "6") document.getElementById("q").value = "Jag funderar på att starta en webshop inom knyppling. Har du tips på plattform som fungerar bra med Fortnox?";
+		if (e.key == "0") {
+			init()
+			document.getElementById("q").value = "";
+		}
 	}
 	if (e.shiftKey) {
 		if (e.key == "Enter") {
 			make_post_request('ask', ask, 'q');
-		}
-		if (e.key == "C") {
-			init();
 		}
 	}
 }
